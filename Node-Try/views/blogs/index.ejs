@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.Ejs') %>
+<body>
+    <!--Other way of showing navbar using EJS-->
+    <%- include('../partials/nav.Ejs') %>
+
+    <div class="blogs content">
+        <h2>All Blogs
+            <p class="deleteAll" data-doc="<%= blogs._id %>">Delete All</p>
+        </h2>
+        
+        <form action="/blogs/search" method="POST">
+            <input type="text" placeholder="Search.." name="searchKeyword">
+        </form> 
+        
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(blog => { %>
+              <a class="single" href="/blogs/<%= blog._id %>">
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snippet"><%= blog.snippet %></p>
+                <p class="author"><%= blog.author %></p>
+              </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no blogs to display...</p>
+        <% } %>
+    </div>
+    <!--FOOTER EJS-->
+    <%- include('../partials/footer.Ejs') %>
+
+    <!-- SCRIPT -->
+    <script>
+        const trashcanAll = document.querySelector('p.deleteAll');
+        trashcanAll.addEventListener('click', (e) => {
+          const endpoint = `/blogs/${trashcanAll.dataset.doc}`;
+          fetch(endpoint, {
+            method: 'DELETE',
+          })
+          .then(response => response.json())
+          .then(data => window.location.href = data.redirect)
+          .catch(err => console.log(err));
+        });
+    </script>
+</body>
+</html>

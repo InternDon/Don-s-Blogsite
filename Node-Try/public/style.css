@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+        body{
+          max-width: 1200px;
+          margin: 20px auto;
+          padding: 0 20px;
+          font-family: 'Poppins', sans-serif;
+          max-width: 1200px;
+        }
+        h1.navbarBrand{
+          font-family: 'Playfair Display SC', serif;
+        
+        }
+        p, h1, h2, h3, a, ul{
+          margin: 0;
+          padding: 0;
+          text-decoration: none;
+          color: #222;
+        }
+        /* nav & footer styles */
+        nav{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 60px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid rgb(243, 24, 90);
+          text-transform: uppercase;
+        }
+        nav ul{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+        nav li{
+          list-style-type: none;
+          margin-left: 20px;
+        }
+        nav h1{
+          font-size: 3em;
+        }
+        nav p, nav a{
+          color: rgb(66, 87, 116);
+          font-weight: 300;
+        }
+        nav a:hover{
+          color: rgb(70, 189, 110);
+          font-weight: 900xp;
+        }
+        footer{
+          color: rgb(39, 35, 35);
+          text-align: center;
+          margin: 80px auto 20px;
+        }
+        h2{
+          margin-bottom: 10px;
+        }
+        h3{
+          margin-bottom: 8px;
+        }
+        .content{
+          margin-left: 20px;
+        }
+        /* index styles */
+        .blogs a{
+          display: block;
+          margin: 40px 0;
+          padding-left: 30px;
+          border-left: 6px solid pink;
+        }
+        .blogs a:hover h3{
+          color: rgb(70, 189, 110);
+        }
+        /* details styles */
+        .details{
+          position: relative;
+        }
+        .delete{
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-radius: 50%;
+          padding: 8px;
+        }
+        .delete:hover{
+          cursor: pointer;
+          box-shadow: 1px 2px 3px rgba(7, 7, 7, 0.2);
+        }
+        /* Delete All Styles */
+        .deleteAll:hover{
+          cursor: pointer;
+          padding: 3px;
+          border-radius: 5%;
+          box-shadow: 3px 5px red;
+          color: red;
+        }
+        .deleteAll{
+          padding: 3px;
+          box-shadow: 1px 2px 3px rgba(7, 7, 7, 0.2);
+          float: right; 
+          font-size: 20px;
+        }
+        /* create styles */
+        .create-blog form{
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .create-blog input,
+        .create-blog textarea{
+          display: block;
+          width: 100%;
+          margin: 10px 0;
+          padding: 8px;
+        }
+        .create-blog label{
+          display: block;
+          margin-top: 24px;
+        }
+        textarea{
+          height: 120px;
+        }
+        .create-blog button{
+          margin-top: 20px;
+          background: crimson;
+          color: white;
+          padding: 6px;
+          border: 0;
+          font-size: 1.2em;
+          cursor: pointer;
+        }
+        /* Back button Anchor */
+        a.backbutton{
+          font-size: 18px;
+        }
+        a.backbutton:hover{
+          color: green;
+          padding: 1%;
+          box-shadow: 3px 3px pink;
+        }
